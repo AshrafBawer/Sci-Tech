@@ -1,0 +1,45 @@
+
+.footer {
+    position: relative;
+    border-top: 2px solid #222;
+    height: 5rem;
+
+
+        
+        .heading-3 {
+            position: absolute;
+            top: 1rem;
+            left: 0;
+        }
+    
+        &__nav {
+            display: inline-block;
+            width: 100%;
+            margin: 0;
+            margin-top: 1rem;
+            text-align: center;
+            
+            &__item {
+                display: inline-block;
+                padding: 0 1rem;
+            }
+        }
+    
+        &__icons {
+            position: absolute;
+            right: 0;
+            top: 1rem;
+            &__item {
+                display: inline-block;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                background: #666;
+            }
+        }
+
+        &__link {
+            color: inherit;
+            
+        }
+}

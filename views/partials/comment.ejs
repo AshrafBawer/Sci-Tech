@@ -1,0 +1,29 @@
+<div class="comments">
+        <% comment.comments.forEach( (reply) => { %>
+            <div class="comment">
+                    <div class="content">
+                    <a class="author"><%= reply.author %></a>
+                    <div class="metadata">
+                    <span class="date"><%= reply.date.toDateString() %></span>
+                    </div>
+                    <div class="text">
+                    <%= reply.body %>
+                    </div>
+                    <div class="actions">
+                    <a class="reply reply-button">Reply</a>
+                    <form class="ui reply form reply-comment display-none" action="/blog/<%= post._id %>/comment" method="POST">
+                        <div class="field">
+                            <input type="text" name="comment[name]" placeholder="Your name" required>
+                        </div>
+                        <div class="field">
+                        <textarea placeholder="Type your comment here..." required></textarea>
+                        </div>
+                        <button class="ui primary submit button">
+                            Reply
+                        </button>
+                    </form>
+                    </div>
+                    </div>
+                </div>
+        <% }) %>
+    </div>

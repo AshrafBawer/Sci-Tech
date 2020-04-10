@@ -1,0 +1,241 @@
+.main.about {
+  margin-top: 2rem; }
+
+.admin {
+  margin: 2rem 0; }
+  .admin__item {
+    margin-bottom: 7rem; }
+    .admin__item h2.heading-2 {
+      border-bottom: 2px solid #999;
+      padding-bottom: 1rem; }
+  .admin__item.quote .ui.form {
+    font-size: 1.4rem;
+    margin-bottom: 2rem; }
+
+.admin {
+  position: relative; }
+  .admin .ui.form.login {
+    font-size: 1.4rem;
+    width: 50rem !important;
+    padding: 4rem;
+    border: 2px solid #222;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.admin.blog .post h2.heading-2 {
+  display: inline-block;
+  margin: 0; }
+
+.admin.blog .post .heading-3 {
+  margin: 0; }
+
+.admin.blog .post__date {
+  margin: 0 2rem; }
+
+.admin.blog .ui.fluid {
+  width: 60rem;
+  margin: 0 auto; }
+
+.admin.blog .label {
+  font-size: 1.2rem; }
+
+.main.quotes {
+  margin: 2rem 0; }
+  .main.quotes .quote .heading-3 {
+    margin: 0 2rem; }
+  .main.quotes .ui.fluid {
+    width: 60rem;
+    margin: 0 auto; }
+
+.main.article .post {
+  margin-bottom: 4rem; }
+  .main.article .post .heading-2 {
+    margin-top: 4rem;
+    margin-bottom: 0; }
+  .main.article .post__date, .main.article .post__author {
+    margin-right: 1rem; }
+
+.main.article .ui.comments {
+  background: #d9d9d9;
+  padding: 2rem;
+  max-width: 100% !important;
+  font-size: 1.4rem; }
+
+.main.article .ui.reply.form {
+  font-size: 1.4rem; }
+
+.main.article .display-none {
+  display: none; }
+
+.main.article .ui.comments .reply.form textarea {
+  height: 8rem; }
+
+.main.article .ui.comments .reply.form.comment-form {
+  padding-top: 4rem;
+  padding-bottom: 2rem; }
+
+.main.article .ui.comments {
+  margin-bottom: 2rem; }
+
+.main.article .comments {
+  padding-top: 1rem !important;
+  padding-bottom: 0.1rem !important;
+  margin-top: 1rem !important; }
+
+html {
+  font-size: 10px; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.4rem;
+  width: 120rem;
+  margin: 0 auto; }
+
+.section {
+  border-top: 2px solid #222;
+  padding: 5rem 0;
+  width: 1200px;
+  margin: auto; }
+
+.ui.button {
+  font-size: 1.2rem; }
+
+main.main {
+  min-height: 85vh; }
+
+.blog__posts {
+  display: grid;
+  grid-auto-rows: 300px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2rem; }
+  .blog__posts__post {
+    color: inherit;
+    padding: 2rem;
+    background-color: #f7f7f7;
+    overflow: hidden;
+    text-align: center; }
+    .blog__posts__post .img {
+      height: 15rem; }
+
+.main.post-form {
+  display: flex;
+  align-items: center; }
+  .main.post-form .ui.form {
+    width: 100%;
+    font-size: 1.4rem; }
+
+.button {
+  margin-top: 4rem;
+  display: inline-block;
+  background: white;
+  padding: 1rem 4rem;
+  border: 2px solid #222;
+  color: inherit; }
+
+.button:hover {
+  background: #222;
+  color: white; }
+
+.footer {
+  position: relative;
+  border-top: 2px solid #222;
+  height: 5rem; }
+  .footer .heading-3 {
+    position: absolute;
+    top: 1rem;
+    left: 0; }
+  .footer__nav {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    margin-top: 1rem;
+    text-align: center; }
+    .footer__nav__item {
+      display: inline-block;
+      padding: 0 1rem; }
+  .footer__icons {
+    position: absolute;
+    right: 0;
+    top: 1rem; }
+    .footer__icons__item {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: #666; }
+  .footer__link {
+    color: inherit; }
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: white; }
+  .hero__text {
+    width: 40rem;
+    position: absolute;
+    right: 20rem;
+    top: 30rem; }
+
+.nav {
+  background: white;
+  border-bottom: 2px solid #222;
+  display: flex;
+  align-items: center; }
+  .nav__list {
+    display: inline-block;
+    flex-grow: 1;
+    text-align: center; }
+  .nav__item {
+    display: inline-block;
+    margin: 0 1rem; }
+  .nav__link {
+    color: #545454; }
+  .nav--active {
+    text-decoration: line-through gray;
+    pointer-events: none; }
+  .nav .ui.icon.input {
+    margin-right: 1rem; }
+
+.qoute {
+  width: 50rem;
+  margin: 0 auto;
+  text-align: center; }
+
+.circle_img {
+  margin: 0 auto;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background: #666; }
+
+.heading-2 {
+  font-family: 'Alegreya', serif;
+  font-size: 2rem; }
+
+.heading-3 {
+  font-size: 1.4rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 200; }
+
+.admin-font {
+  font-size: 1.6rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500; }
+
+.type-1 {
+  font-size: 1.6rem; }
+
+.inline-block {
+  display: inline-block; }
+
+.center {
+  width: 100%;
+  text-align: center; }
+
+.border-bottom {
+  border-bottom: 2px solid #999; }
+
+.mr-bt-1 {
+  margin-bottom: 1rem; }

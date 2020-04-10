@@ -1,0 +1,1 @@
+$(".reply-button").click(function(){$(this).siblings(".reply-comment").is(":hidden")?$(this).siblings(".reply-comment").slideDown("fast"):$(this).siblings(".reply-comment").slideUp("fast")}),$(document).ready(function(){$('.nav__item > a[href="'+window.location.pathname+'"]').addClass("nav--active")});

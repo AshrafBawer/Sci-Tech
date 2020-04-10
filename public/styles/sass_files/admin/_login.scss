@@ -1,0 +1,15 @@
+
+
+.admin {
+    position: relative;
+    .ui.form.login {
+        font-size: 1.4rem;
+        width: 50rem !important;
+        padding: 4rem;
+        border: 2px solid #222;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}

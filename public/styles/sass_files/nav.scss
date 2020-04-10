@@ -1,0 +1,31 @@
+
+.nav {
+    background: $background;
+    border-bottom: 2px solid #222;
+    display:flex;
+    align-items: center;
+
+    &__list {
+        display:inline-block;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    &__item {
+        display:inline-block;
+        margin: 0 1rem;
+    }
+
+    &__link {
+        color: #545454;
+    }
+
+    &--active {
+        text-decoration: line-through gray;
+        pointer-events: none;
+    }
+
+    .ui.icon.input {
+        margin-right: 1rem;
+    }
+}

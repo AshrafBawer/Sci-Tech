@@ -1,0 +1,66 @@
+
+
+.main.article {
+    .post {
+        .heading-2 {
+            margin-top: 4rem;
+            margin-bottom: 0;
+        }
+        &__date, &__author {
+            margin-right: 1rem;
+        }
+
+        margin-bottom: 4rem;
+    }
+
+    .ui.comments {
+        background: #d9d9d9;
+        padding: 2rem;
+        max-width:100% !important;
+        font-size: 1.4rem;  
+    }
+
+    .ui.reply.form {
+        font-size: 1.4rem;
+    }
+
+    .display-none {
+        display: none;
+    }
+
+    .ui.comments .reply.form textarea {
+        height: 8rem;
+    }
+
+    .ui.comments .reply.form.comment-form {
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+
+    .ui.comments {
+        margin-bottom: 2rem;
+    }
+
+    .comments {
+        padding-top: 1rem !important;
+        padding-bottom: 0.1rem !important;
+        margin-top: 1rem !important;
+    }
+
+    // .comments .comments {
+    //     background: #666;
+    // } 
+
+    // .comments .comments .comments {
+    //     background: #555;
+    // }
+
+    // .comments .comments .comments .comments {
+    //     background: #444;
+    // }
+
+    // .comments .comments .comments .comments .comments {
+    //     background: #333;
+    // }
+
+}

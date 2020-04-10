@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+    <section class="hero">
+      <div class="hero__text">
+        <h2 class="heading-2">Everything was made</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, nobis repellat! Modi
+           temporibus tempora unde accusantium,
+           perspiciatis delectus quam deserunt itaque vitae autem ducimus, similique accusamus
+            expedita voluptates! Tempore, voluptatem!
+        </p>
+      </div>
+    </section>
+    <section class="blog section">
+      <h2 class="heading-2">Posts</h2>
+      <div class="blog__posts">
+        <% posts.forEach( (post) => { %> 
+          <a class="blog__posts__post" href="/blog/<%= post._id %>">
+              <div class="img">
+                <img src="<%= post.img %>" alt="it's an icon">
+              </div>
+              <h2 class="heading-2"><%= post.title %></h2>
+              <p class="type-1"><%= post.intro %></p>
+          </a>
+        <% }) %>
+
+      </div>
+      <div class="center">
+        <a href="#" class="button">More</a>
+      </div>
+    </section>
+    <% if(quote){ %> 
+      <section class="section">
+        <div class="qoute">
+          <p class="type-1"><%= quote.body %></p>
+          <h2 class="heading-2"><%= quote.author %></h2>
+          <div class="circle_img">
+            <!-- <img src="#" alt=""> -->
+          </div>
+        </div>
+      </section>
+    <% } %>
+
+<%- include('partials/footer') %>

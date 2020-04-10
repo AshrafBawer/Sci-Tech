@@ -1,0 +1,50 @@
+    <!-- Posts and comments -->
+    <a href="/blog/new">Create a new post</a>
+    <h2>Posts</h2>
+    <% posts.forEach((post) => { %>
+        <a href="/blog/<%= post._id %>"><%= post.title %></a>
+        <p><%= post.body %></p>
+        <a href="/blog/<%= post._id %>/edit">Edit</a>
+        <form action="/blog/<%= post._id %>?_method=DELETE" method="POST">
+            <button>Delete Post</button>
+        </form>
+
+        <% post.comments.forEach((comment) => { %>
+            <div class="comment" style="border: 2px solid #222">
+                <h4><%= comment.author %></h4>
+                <p><%= comment.body %></p>
+                <form action="/blog/<%= post._id %>/comment/<%= comment._id %>/delete?_method=DELETE" method="POST" >
+                    <button>Delete</button>
+                </form>
+                <% if(!comment.approve){ %> 
+                    <form action="/admin/comment/<%= comment._id %>/approve?_method=PUT" method="POST" >
+                        <button>Approve</button>
+                    </form>
+                <% }else { %> 
+                    <form action="/admin/comment/<%= comment._id %>/disapprove?_method=PUT" method="POST" >
+                        <button>Disapprove</button>
+                    </form>
+                <% } %>
+                <div style="margin-left: 100px; background:#999">
+                    <% comment.replies.forEach( (reply) => { %>
+                        <h4><%= reply.author %></h4>
+                        <p><%= reply.body %></p>
+                        <form action="/blog/<%= post._id %>/comment/<%= comment._id %>/reply/<%= reply._id %>/delete?_method=DELETE" method="POST" >
+                            <button>Delete</button>
+                        </form>
+                    <% }) %>
+                </div>
+            </div>
+        <% }); %>
+    <hr>  
+    <% }); %> 
+
+    <div class="quotes" style="border: 2px solid red">
+        <form action="/admin/quotes" method="POST">
+            <input required type="text" name="quote[author]" placeholder="author">
+            <input type="text" name="quote[body]" placeholder="quote here..." required>
+            <input type="text" name="quote[img]" placeholder="img url here...">
+            <button>Add to storage</button>
+        </form>
+        <a href="/admin/quotes">See all quotes</a>
+    </div>

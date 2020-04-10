@@ -1,0 +1,19 @@
+
+<%- include('../partials/header'); %>
+
+      <main class="blog main">
+        <h2 class="heading-2">Posts</h2>
+        <div class="blog__posts">
+          <% posts.forEach((post) => { %>
+            <a class="blog__posts__post" href="/blog/<%= post._id %>">
+                <div class="img">
+                  <img src="<%= post.img %>" alt="it's an icon">
+                </div>
+                <h2 class="heading-2"><%= post.title %></h2>
+                <p class="type-1"><%= post.intro %></p>
+            </a> 
+          <% }) %>
+        </div>
+      </main>
+
+  <%- include('../partials/footer'); %>

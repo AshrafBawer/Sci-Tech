@@ -1,0 +1,13 @@
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background:$background;
+    &__text {
+        width: 40rem;
+        position: absolute;
+        right: 20rem;
+        top: 30rem;
+    }
+}
+

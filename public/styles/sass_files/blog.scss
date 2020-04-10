@@ -1,0 +1,29 @@
+.blog {
+    &__posts {
+        display: grid;
+        grid-auto-rows: 300px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 2rem;
+
+        &__post {
+            color: inherit;
+            padding: 2rem;
+            background-color: #f7f7f7;
+            overflow: hidden;
+            text-align: center;
+            .img {
+                height: 15rem;
+            }
+        }
+    }
+    
+}
+
+.main.post-form {
+    display: flex;
+    align-items: center;
+    .ui.form {
+        width: 100%;
+        font-size: 1.4rem;
+    }
+}

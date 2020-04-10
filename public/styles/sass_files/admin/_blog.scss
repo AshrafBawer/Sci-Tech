@@ -1,0 +1,27 @@
+
+
+.admin.blog {
+    .post {
+        h2.heading-2 {
+            display:inline-block;
+            margin: 0;
+        }
+
+        .heading-3 {
+            margin: 0;
+        }
+
+        &__date{
+            margin: 0 2rem;
+        }
+    }
+
+    .ui.fluid {
+        width:60rem;
+        margin: 0 auto;
+    }
+
+    .label {
+        font-size: 1.2rem;
+    }
+}

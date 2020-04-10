@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEMANTIC UI  -->
+    <link href="/styles/semantic.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya:400,700|Lato:300,400&display=swap" rel="stylesheet"> 
+    <title>Blog</title>
+</head>
+<body>
+
+
+<nav class="nav">
+    <a id="logo" href="#">Sci-Tech</a>
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a href="/" class="nav__link ">Home</a>
+      </li>
+      <li class="nav__item">
+        <a href="/blog" class="nav__link">Blog</a>
+      </li>
+      <li class="nav__item">
+        <a href="/about" class="nav__link">About</a>
+      </li>
+    </ul>
+    <div class="ui icon input" id="abId0.3297349402289076">
+        <input type="text" placeholder="Search...">
+        <i class="circular search link icon"></i>
+    </div>
+    <% if(admin) { %> 
+      <a href="/admin" class="ui primary button admin">Admin</a>
+      <a href="/admin/logout" class="ui button">Logout</a>
+    <% } %>
+  </nav>
+  
+  <% if(warning && warning.length > 0){ %>
+    <div class="ui warning message">
+      <i class="close icon"></i>
+      <div class="header">
+        <%= warning %>
+      </div>
+    </div>
+  <% } %>
+
+  <% if(success && success.length > 0){ %> 
+    <div class="ui positive message">
+      <i class="close icon"></i>
+      <div class="header">
+        <%= success %>
+      </div>
+    </div>
+  <% } %>
+

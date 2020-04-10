@@ -1,0 +1,19 @@
+
+
+.admin {
+    margin: 2rem 0;
+    &__item {
+        h2.heading-2 {
+            border-bottom: 2px solid #999;
+            padding-bottom: 1rem;
+        }
+        margin-bottom: 7rem;
+    }
+
+    &__item.quote {
+        .ui.form {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
