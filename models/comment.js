@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const Populate = require('../util/autopopulate');
 
 const commentSchema = mongoose.Schema({
-    author: String,
+    author: { type:String, required: true},
     date: {type:Date, default: Date.now},
-    body: String,
+    body: { type:String, required: true},
     comments: [
         {type: mongoose.Schema.Types.ObjectId, ref: "Comment"}
     ],

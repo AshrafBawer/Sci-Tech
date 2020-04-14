@@ -1,9 +1,13 @@
 
 .nav {
     background: $background;
-    border-bottom: 2px solid #222;
+    border-bottom: 2px solid $color-1;
     display:flex;
     align-items: center;
+
+    #logo {
+        color: $color-1;
+    }
 
     &__list {
         display:inline-block;
@@ -17,11 +21,16 @@
     }
 
     &__link {
-        color: #545454;
+        color: $color-1;
+
+        &:hover {
+            color: inherit;
+            border-bottom: 2px solid $color-1;
+        }
     }
 
     &--active {
-        text-decoration: line-through gray;
+        text-decoration: line-through $color-1;
         pointer-events: none;
     }
 

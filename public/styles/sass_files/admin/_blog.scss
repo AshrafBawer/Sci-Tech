@@ -2,9 +2,16 @@
 
 .admin.blog {
     .post {
-        h2.heading-2 {
+        display: list-item;
+        list-style-type: none;
+        a.heading-2 {
             display:inline-block;
             margin: 0;
+            color: inherit;
+        }
+
+        a.heading-2:hover {
+            color: $color-3;
         }
 
         .heading-3 {

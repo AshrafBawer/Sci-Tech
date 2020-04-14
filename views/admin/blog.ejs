@@ -3,25 +3,46 @@
 
 <main class="admin main blog">
     <div class="ui fluid action input">
-        <input type="text" placeholder="Search Posts...">
+        <input id="search-highlight" name="search-highlight" type="text" data-list=".highlight_list" autocomplete="off" placeholder="Search Posts...">
         <div class="ui button">Search</div>
     </div>
+
     <h1 class="heading-1 border-bottom">Posts</h1>
-    <% for(let i=0; i<posts.length; i++){ %>
-        <div class="post">
-            <h2 class="heading-2"><%= i+1 %> : <%= posts[i].title %></h2>
-            <span class="post__date">Date : <%= posts[i].date.toDateString() %></span>
-            <span class="post__date">Author: <%= posts[i].author %></span>
-            <div class="ui red horizontal label">4 new comments</div>
-            <h3 class="admin-font"><%= posts[i].intro %></h3>
-            <br>
-            <a href="/blog/<%= posts[i]._id %>/edit" class="ui button">Edit</a>
-            <form action="/blog/<%= posts[i]._id %>?_method=DELETE" class="inline-block" method="POST">
-                <button class="ui button">Delete</button>
-            </form>
-            <hr>
-        </div>  
-    <% } %>
+    <div class="vertical highlight_list">
+        <% for(let i=posts.length - 1; i >= 0; i--){ %>
+            <div class="post">
+                <a href="/blog/<%= posts[i]._id %>" class="heading-2"><%= i+1 %> : <%= posts[i].title %></a>
+                <span class="post__date">Date : <%= posts[i].date.toDateString() %></span>
+                <span class="post__date">Author: <%= posts[i].author %></span>
+                <% let commentNumber = 0;
+                    function countComments(comment){
+                        if(!comment.seen){
+                            commentNumber += 1;
+                        }
+    
+                        if(comment.comments.length > 0){
+                            comment.comments.forEach( (comment) => {
+                                countComments(comment);
+                            });
+                        }
+                    }
+                 posts[i].comments.forEach( (comment) => { 
+                    countComments(comment)
+                }); %>
+                <% if(commentNumber != 0){ %>
+                    <div class="ui red horizontal label"><%= commentNumber %> new comments</div>
+                <% } %>
+                <h3 class="admin-font"><%= posts[i].intro %></h3>
+                <br>
+                <a href="/blog/<%= posts[i]._id %>/edit" class="ui button">Edit</a>
+                <form action="/blog/<%= posts[i]._id %>?_method=DELETE" class="inline-block" method="POST">
+                    <button class="ui button">Delete</button>
+                </form>
+                <hr>
+            </div>  
+        <% } %>
+    </div>
+
  
 </main>
 

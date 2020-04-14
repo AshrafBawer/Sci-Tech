@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const quoteSchema = mongoose.Schema({
-    author: String,
-    body: String,
+    author: { type:String, required: true},
+    body: { type:String, required: true},
     img: String
 });
 

@@ -14,7 +14,7 @@
     }
 
     .ui.comments {
-        background: #d9d9d9;
+        background: $comments-background;
         padding: 2rem;
         max-width:100% !important;
         font-size: 1.4rem;  
@@ -46,21 +46,5 @@
         padding-bottom: 0.1rem !important;
         margin-top: 1rem !important;
     }
-
-    // .comments .comments {
-    //     background: #666;
-    // } 
-
-    // .comments .comments .comments {
-    //     background: #555;
-    // }
-
-    // .comments .comments .comments .comments {
-    //     background: #444;
-    // }
-
-    // .comments .comments .comments .comments .comments {
-    //     background: #333;
-    // }
 
 }

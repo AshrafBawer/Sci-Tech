@@ -6,3 +6,4 @@ $('.reply-button').click(function () {
       $(this).siblings('.reply-comment').slideUp('fast');
     }
 });
+

@@ -8,13 +8,22 @@
         &__post {
             color: inherit;
             padding: 2rem;
-            background-color: #f7f7f7;
+            background-color: $background;
+            border : 2px solid $color-1;
             overflow: hidden;
             text-align: center;
             .img {
                 height: 15rem;
             }
+
+            &:hover {
+                color: $color-2;
+            }
         }
+    }
+
+    .ui.buttons {
+        margin-bottom: 2rem;
     }
     
 }

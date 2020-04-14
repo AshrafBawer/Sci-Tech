@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const Populate = require('../util/autopopulate');
 
 const postSchema = mongoose.Schema({
-    title: String,
+    title: { type:String, required: true},
     date: {type:Date, default: Date.now},
-    author: String,
-    body: String,
-    img: String,
-    intro: String,
+    author: { type:String, required: true},
+    body: { type:String, required: true},
+    img: { type:String, required: true},
+    intro: { type:String, required: true},
     comments: [
         {type: mongoose.Schema.Types.ObjectId, ref: "Comment"}
     ]

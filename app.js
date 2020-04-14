@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
+const expressSanitizer = require('express-sanitizer');
 
 // routes
 const indexRoutes  = require('./routes/index');
@@ -18,7 +19,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
-
+app.use(expressSanitizer());
 
 // database configuration
 mongoose.connect('mongodb://localhost/blog', {useNewUrlParser:true, useUnifiedTopology: true, useCreateIndex: true});

@@ -4,11 +4,11 @@
     display: inline-block;
     background: $background;
     padding: 1rem 4rem;
-    border: 2px solid #222;
+    border: 2px solid $color-1;
     color: inherit;
 }
 
 .button:hover {
-    background: #222;
+    background: $color-1;
     color: $background;
 }

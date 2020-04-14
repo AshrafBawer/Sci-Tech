@@ -1,23 +1,41 @@
 
 <%- include('../partials/header'); %>
 
+
 <!-- admin index page -->
 <main class="admin">
     <div class="admin__item">
         <h2 class="heading-2">Posts</h2>
-        <h3 class="admin-font">Total number of posts : 21</h3>
-        <h3 class="admin-font">Total number of comments: 56
-            <br>approved = 30
-            <br>disapproved = 10
-            <br>Not specified = 15</h3>
-        <h3 class="admin-font">Total number of authors : 3</h3>
+        <h3 class="admin-font count-posts">Total number of posts : <span></span></h3>
+        <h3 class="admin-font count-comments">Total number of comments: <span class="total-comments"></span>
+            <br>new = <span class="new-comments"></span>
+            <br>seen = <span class="seen-comments"></span>
+        </h3>
         <a href="/admin/blog" class="ui button">Posts</a>
         <a href="/blog/new" class="ui button">Create a new post</a>
     </div>
     <div class="admin__item quote">
         <h2 class="heading-2">Quotes</h2>
-        <h3 class="admin-font">Total number of quotes : 17</h3>
-        <form class="ui form" action="/admin/quotes" method="POST">
+        <h3 class="admin-font count-quotes">Total number of quotes : <span></span></h3>
+        <form class="ui form create-quote-form" action="/admin/quotes" method="POST">
+            <div class="three fields">
+                <div class="field">
+                <label>Author</label>
+                <input type="text" class="quote-author" name="quote[author]" placeholder="Author name">
+                </div>
+                <div class="field" >
+                <label>Quote</label>
+                <input type="text" class="quote-body" name="quote[body]" placeholder="Quote here">
+                </div>
+                <div class="field">
+                <label>Image URL</label>
+                <input type="text" class="quote-img" placeholder="Image's URL hrere">
+                </div>
+            </div>
+            <button class="ui button">Add to Storage</button>
+            <a href="/admin/quotes" class="ui button">See All Quotes</a>
+        </form>
+        <!-- <form class="ui form" action="/admin/quotes" method="POST">
             <div class="three fields">
                 <div class="field">
                 <label>Author</label>
@@ -34,15 +52,7 @@
             </div>
             <button class="ui button">Add to Storage</button>
             <a href="/admin/quotes" class="ui button">See All Quotes</a>
-        </form>
-    </div>
-    <div class="admin__item">
-        <h2 class="heading-2">About</h2>
-        <div class="text mr-bt-1">
-            <p class="admin-font">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum praesentium ipsa vel minus, rem voluptas eligendi, impedit sunt iure nam ea laudantium facilis! Et obcaecati similique nemo vitae odit suscipit.</p>
-            <p class="admin-font">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum praesentium ipsa vel minus, rem voluptas eligendi, impedit sunt iure nam ea laudantium facilis! Et obcaecati similique nemo vitae odit suscipit.</p>
-        </div>
-        <a href="/admin/about" class="ui button">Edit</a>
+        </form> -->
     </div>
 
 </main>

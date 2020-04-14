@@ -14,6 +14,43 @@
             </a> 
           <% }) %>
         </div>
+        <% if(pages > 0){ %>
+          <div class="center">
+            <div class="ui buttons">
+              <% if(Number(currentPage) > 4) { %>
+                <% if(Number(currentPage) === 1){ %> 
+                  <a class="ui button disabled">First</a> 
+                 <% } else { %>
+                  <a href="/blog/page/1" class="ui button">First</a> 
+                 <% } 
+              } 
+              var i = (Number(currentPage) > 4 ? Number(currentPage) - 3:1);
+              if(i !== 1){ %>
+                <a class="ui button disabled">...</a>
+              <% }
+              for(; i<=(Number(currentPage) + 3) && i <= pages; i++){ 
+                 if( i == Number(currentPage)){ %>
+                  <a class="ui button disabled"><%= i %></a>
+                 <% }else { %> 
+                  <a href="/blog/page/<%= i %>" class="ui button"><%= i %></a>
+                 <% } 
+                 if( i == Number(currentPage) + 3 && i < pages ) { %> 
+                  <a class="ui button disabled">...</a>
+                <% } %>
+                
+              <% }
+              if(Number(pages) > 4) {
+                if(currentPage == pages) { %>
+                  <a class="ui button disabled">Last</a> 
+                  <% }else { %> 
+                    <a href="/blog/page/<%= pages %>" class="ui button">Last</a>
+                  <% }  
+              } %>
+              
+               
+            </div>
+          </div>
+        <% } %>
       </main>
 
   <%- include('../partials/footer'); %>

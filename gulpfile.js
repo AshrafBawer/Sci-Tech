@@ -7,8 +7,8 @@ const nodemon = require('gulp-nodemon');
 
 gulp.task('minifyJs', (done) => {
     gulp.src('public/js/src/*.js')
-    .pipe(concat('main.js'))
     .pipe(uglify())
+    .pipe(concat('main.js'))
     .pipe(gulp.dest('public/js'));
     done();
 });

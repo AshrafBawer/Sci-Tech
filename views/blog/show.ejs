@@ -8,49 +8,69 @@
             <span class="post__date heading-3">Date: 9/7/2020</span>
             <span class="post__author heading-3">Author: Ashraf Bawer</span>
             <hr>
-            <p class="admin-font"><%= post.body %></p>
+            <p class="admin-font"><%- post.body %></p>
         </div>
 
         <div class="ui comments">
             <h2 class="heading-2">Comments</h2>
+            <% if(admin) { %> 
+                <form action="/blog/<%= post._id %>/comment/seenAll?_method=PUT" method="POST">
+                    <button class="ui button">Seen all</button> 
+                </form>
+            <% } %>
             <hr>
-            <% post.comments.forEach( (comment) => { %>
-               <% function recurive(comment){  %>
-                    <div class="comment">
-                            <div class="content">
-                            <a class="author"><%= comment.author %></a>
-                            <div class="metadata">
-                                <div class="date"><%= comment.date.toDateString() %></div>
-                            </div>
-                            <div class="text">
-                                <%= comment.body %>
-                            </div>
-                            <div class="actions">
-                                <a class="reply reply-button">Reply</a>
-                                <form class="ui reply form reply-comment display-none" action="/blog/<%= post._id %>/comment/<%= comment._id %>/reply" method="POST">
-                                    <div class="field">
-                                        <input type="text" name="comment[author]" placeholder="Your name" required>
-                                    </div>
-                                    <div class="field">
-                                    <textarea name="comment[body]" placeholder="Type your comment here..." required></textarea>
-                                    </div>
-                                    <button class="ui primary submit button">
-                                    Reply
-                                    </button>
-                                </form>
-                            </div>
-                            </div>
-                            <% if(comment.comments.length > 0) { %>
-                                <div class="comments">
-                                    <% comment.comments.forEach(function(comment){
-                                        recurive(comment);
-                                    }) %>
-                                </div>
-                           <% } %>
+            <% function recurive(comment){  %>
+                <div class="comment">
+                        <div class="content">
+                        <a class="author"><%= comment.author %></a>
+                        <div class="metadata">
+                            <div class="date"><%= comment.date.toDateString() %></div>
                         </div>
-               <% } %>
-               <% recurive(comment); %>
-            <% }) %>
+                        <div class="text">
+                            <%= comment.body %>
+                        </div>
+                        <div class="mr-bt-1">
+                            <% if (admin && !comment.seen){ %>
+                                <form action="/blog/<%= post._id %>/comment/<%= comment._id %>/seen?_method=PUT" method="POST" class="inline-block">
+                                    <button class="ui button red">Seen</button>
+                                </form>
+                            <% }else if(admin) { %>
+                                <button class="ui button disabled">Seen</button>
+                            <% } %>
+                            <% if(admin){ %> 
+                                <form action="/blog/<%= post._id %>/comment/<%= comment._id %>/delete?_method=DELETE" class="inline-block" method="POST">
+                                    <button class="ui button">Delete</button>
+                                </form>
+                            <% } %>
+                        </div>
+
+                        <div class="actions">
+                            <a class="reply reply-button">Reply</a>
+                            <form class="ui reply form reply-comment display-none" action="/blog/<%= post._id %>/comment/<%= comment._id %>/reply" method="POST">
+                                <div class="field">
+                                    <input type="text" name="comment[author]" placeholder="Your name" required>
+                                </div>
+                                <div class="field">
+                                <textarea name="comment[body]" placeholder="Type your comment here..." required></textarea>
+                                </div>
+                                <button class="ui primary submit button">
+                                Reply
+                                </button>
+                            </form>
+                        </div>
+                        </div>
+                        <% if(comment.comments.length > 0) { %>
+                            <div class="comments">
+                                <% comment.comments.forEach(function(comment){
+                                    recurive(comment);
+                                }) %>
+                            </div>
+                       <% } %>
+                </div>
+           <% } %>
+            <% post.comments.forEach( (comment) => {
+                recurive(comment); 
+            }) %>
             <form class="ui reply form comment-form" action="/blog/<%= post._id %>/comment" method="POST">
                 <h2 class="heading-">Write a comment</h2>
                 <div class="field">
