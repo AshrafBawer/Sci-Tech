@@ -1,4 +1,4 @@
-
+@import './responsive.scss';
 
 .admin.blog {
     .post {
@@ -26,6 +26,10 @@
     .ui.fluid {
         width:60rem;
         margin: 0 auto;
+
+        @include respond(phone){
+            width: 80%;
+        }
     }
 
     .label {

@@ -1,6 +1,7 @@
-
+@import './responsive.scss';
 .main.quotes {
     margin: 2rem 0;
+    padding: 4rem;
     .quote {
         .heading-3 {
             margin: 0 2rem;
@@ -10,5 +11,10 @@
     .ui.fluid {
         width:60rem;
         margin: 0 auto;
+
+        @include respond(phone){
+            width: 80%;
+        }
+        
     }
 }

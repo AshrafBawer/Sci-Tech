@@ -23,7 +23,7 @@
         <a href="/blog" class="nav__link">Blog</a>
       </li>
       <li class="nav__item">
-        <a href="/about" class="nav__link">About</a>
+        <a href="/contact" class="nav__link">Contact</a>
       </li>
     </ul>
       <div class="ui search">
@@ -35,11 +35,13 @@
       </div>
 
     <% if(admin) { %> 
-      <a href="/admin" class="ui secondary button admin">Admin</a>
-      <a href="/admin/logout" class="ui button">Logout</a>
+      <div class="inline-block mr-tp-1">
+        <a href="/admin" class="ui secondary button admin">Admin</a>
+        <a href="/admin/logout" class="ui button">Logout</a>
+      </div>
     <% } %>
   </nav>
-  <div class="flash-ajax-message mr-tp-1">
+  <div class="flash-ajax-message">
   </div>
 
   <% if(error && error.length > 0){ %>

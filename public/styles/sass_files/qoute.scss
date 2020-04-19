@@ -4,6 +4,10 @@
     width: 50rem;
     margin: 0 auto;
     text-align: center;
+
+    @include respond(phone){
+        width: 90%;
+    }
 }
 
 .circle_img {

@@ -1,9 +1,34 @@
+@import './responsive.scss';
 .blog {
+
+
+    @include respond(tab-land){
+        .heading-2 {
+            margin-left: 2rem;
+        }
+    }
+
     &__posts {
         display: grid;
         grid-auto-rows: 300px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-gap: 2rem;
+
+        @include respond(tab-land){
+            margin: 2rem;
+        }
+
+        @include respond(tab-port){
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @include respond(phone){
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media(max-width: 25em){
+            grid-template-columns: 1fr;
+        }
 
         &__post {
             color: inherit;
@@ -14,6 +39,10 @@
             text-align: center;
             .img {
                 height: 15rem;
+                i {
+                    margin-top: 4rem;
+                    font-size: 4rem;
+                }
             }
 
             &:hover {

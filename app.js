@@ -13,6 +13,9 @@ const commentRoutes = require('./routes/comment');
 const adminRoutes = require('./routes/admin');
 const registerRoutes = require('./routes/register');
 
+// seed The database with dummy data
+const seedDB = require('./models/seed');
+
 // configuration
 app.use(flash());
 app.set('view engine', 'ejs');
@@ -55,6 +58,9 @@ app.use(function(req,res,next) {
   res.locals.admin  = req.user;
   next();
 });
+
+// seed the database
+seedDB();
 
 // routes
 

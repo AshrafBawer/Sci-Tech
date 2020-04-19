@@ -1,15 +1,28 @@
-
+@import './responsive.scss';
 .footer {
     position: relative;
     border-top: 2px solid $color-1;
     height: 5rem;
-
+    @include respond(phone){
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 4rem 0;
+    }
 
         
         .heading-3 {
             position: absolute;
             top: 1rem;
             left: 0;
+            @include respond(tab-land){
+                left: 1rem;
+            }
+
+            @include respond(phone){
+                position: unset;
+            }
         }
     
         &__nav {
@@ -18,6 +31,10 @@
             margin: 0;
             margin-top: 1rem;
             text-align: center;
+
+            @include respond(phone){
+                display: none;
+            }
             
             &__item {
                 display: inline-block;
@@ -30,6 +47,10 @@
             position: absolute;
             right: 0;
             top: 1rem;
+
+            @include respond(phone){
+                position: unset;
+            }
             &__item {
                 position: relative;
                 display: inline-block;

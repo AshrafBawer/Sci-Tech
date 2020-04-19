@@ -1,0 +1,25 @@
+<%- include('partials/header'); %>
+
+<main class="main post-form">
+    <form id="contact-form" class="ui form">
+        <div class="field">
+          <label>Name</label>
+          <input type="text" class="contact-name" placeholder="Your name here..." required>
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" class="contact-email" placeholder="Write you email address here..." required>
+        </div>
+        <div class="field">
+            <label>Message</label>
+            <textarea required class="contact-message" placeholder="Write your message..."></textarea>
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+          <div class="ui active hideLoader inverted dimmer">
+            <div class="ui text loader">Sending...</div>
+          </div>
+    </form>
+</main>
+
+
+<%- include('partials/footer'); %>

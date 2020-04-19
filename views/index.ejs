@@ -8,6 +8,7 @@
             expedita voluptates! Tempore, voluptatem!
         </p>
       </div>
+      <div class="hero__image"></div>
     </section>
     <section class="blog section">
       <h2 class="heading-2">Posts</h2>
@@ -15,7 +16,7 @@
         <% posts.forEach( (post) => { %> 
           <a class="blog__posts__post" href="/blog/<%= post._id %>">
               <div class="img">
-                <img src="<%= post.img %>" alt="it's an icon">
+                <i class="<%= post.img %>" alt="it's an icon"></i>
               </div>
               <h2 class="heading-2"><%= post.title %></h2>
               <p class="type-1"><%= post.intro %></p>
@@ -32,9 +33,11 @@
         <div class="qoute">
           <p class="type-1"><%= quote.body %></p>
           <h2 class="heading-2"><%= quote.author %></h2>
-          <div class="circle_img">
-            <!-- <img src="#" alt=""> -->
-          </div>
+          <% if(quote.img){ %>
+            <div class="circle_img">
+              <img src="<%= quote.img %>>" alt="Quote's image">
+            </div>
+          <% } %>
         </div>
       </section>
     <% } %>

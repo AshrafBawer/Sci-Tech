@@ -7,7 +7,7 @@
           <% posts.forEach((post) => { %>
             <a class="blog__posts__post" href="/blog/<%= post._id %>">
                 <div class="img">
-                  <img src="<%= post.img %>" alt="it's an icon">
+                  <i class="<%= post.img %>" alt="it's an icon"></i>
                 </div>
                 <h2 class="heading-2"><%= post.title %></h2>
                 <p class="type-1"><%= post.intro %></p>
